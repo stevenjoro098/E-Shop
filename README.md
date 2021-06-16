@@ -8,5 +8,8 @@ E-Commerce platform based on Django Framework.<br>
 > Kivy https://kivy.org/#home <br>
 > KivyMD https://kivymd.readthedocs.io/en/latest/ <br>
  
+## How to setup enviroment
+*$ Shoppers / pip3 install -r requirements.txt <br>
+$ Shopper / python manage.py runserver *
 
 
