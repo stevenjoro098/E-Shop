@@ -1,0 +1,38 @@
+{% extends "base.html"%}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+        <h1 class="my-4">Shop Name</h1>
+        <div class="list-group">
+          <a href="#" class="list-group-item active">{{object.category}}</a>
+          <a href="#" class="list-group-item">Category 2</a>
+          <a href="#" class="list-group-item">Category 3</a>
+        </div>
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="card mt-4">
+          <img class="card-img-top img-fluid" src="{{ product.image.url}}" alt="" style="width:700px;height:600px;>
+          <div class="card-body">
+            <h3 class="card-title">{{product.name}}</h3>
+            <h4>Ksh.{{product.price}}</h4>
+            <p class="card-text">{{product.description}}</p>
+            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+            4.0 stars
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+              {{ cart_product_form }}
+              {% csrf_token %}
+              <input type="submit" value="Add to Cart">
+            </form>
+          </div>
+        </div>
+      </div>
+ </div>
+
+{% endblock %}
